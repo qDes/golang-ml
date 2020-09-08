@@ -17,7 +17,7 @@ func traverse(t *Tree) {
 		return
 	}
 	traverse(t.Left)
-	fmt.Println(t.Value)
+	fmt.Print(t.Value, " ")
 	traverse(t.Right)
 }
 
@@ -38,13 +38,11 @@ func insert(t *Tree, v int) *Tree {
 	if v == t.Value {
 		return t
 	}
-
 	if v < t.Value {
 		t.Left = insert(t.Left, v)
+		return t
 	}
-
 	t.Right = insert(t.Right, v)
-
 	return t
 }
 
